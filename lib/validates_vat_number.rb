@@ -33,6 +33,36 @@ module ActiveRecord
       'Czech Republic' => /^CZ[0,9]{8,10}$/
     }
     
+    VAT_PATTERNS = {
+      'DE' => /^DE[0-9]{9}$/,                                # Germany
+      'AT' => /^ATU[0-9]{8}$/,                               # Austria
+      'BE' => /^BE[0-9]{10}$/,                               # Belgium
+      'BG' => /^BG[0-9]{9,10}$/,                             # Bulgaria
+      'CY' => /^CY[0-9]{8}[A-Z]$/,                           # Cyprus
+      'DK' => /^DK[0-9]{8}$/,                                # Denmark
+      'ES' => /^ES[0-9]{9}$/,                                # Spain
+      'EE' => /^EE[0-9]{9}$/,                                # Estonia
+      'FI' => /^FI[0-9]{8}$/,                                # Finland
+      'FR' => /^FR[A-Z0-9]{2}[0-9]{9}$/,                     # France
+      'EL' => /^EL[0-9]{9}$/,                                # Greece
+      'HU' => /^HU[0-9]{8}$/,                                # Hungary
+      'IE' => /^IE([0-9][A-Z][0-9]{5}[A-Z]|[0-9]{7}[A-Z])$/, # Ireland
+      'IT' => /^IT[0-9]{11}$/,                               # Italy
+      'LV' => /^LV[0-9]{11}$/,                               # Latvia
+      'LT' => /^LT([0-9]{9}|[0-9]{12})$/,                    # Lithuania
+      'LU' => /^LU[0-9]{8}$/,                                # Luxembourg
+      'MT' => /^MT[0-9]{8}$/,                                # Malta
+      'NL' => /^NL[0-9]{9}[A-Z][0-9]{2}$/,                   # Netherlands
+      'PL' => /^PL[0-9]{10}$/,                               # Poland
+      'PT' => /^PT[0-9]{9}$/,                                # Portugal
+      'GB' => /^GB([0-9]{9}|[A-Z0-9]{2}[0-9]{3})$/,          # United Kingdom
+      'RO' => /^RO[0-9]{9}$/,                                # Romania
+      'SK' => /^SK[0-9]{10}$/,                               # Slovakia
+      'SI' => /^SI[0-9]{8}$/,                                # Slovenia
+      'SE' => /^SE[0-9]{12}$/,                               # Sweden
+      'CZ' => /^CZ[0,9]{8,10}$/                              # Czech Republic
+    }
+    
     # Class methods ============================================================
   
     def self.included(base)
