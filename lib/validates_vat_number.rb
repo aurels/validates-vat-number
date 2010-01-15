@@ -26,7 +26,7 @@ module ValidatesVatNumber
     'SK' => /\ASK[0-9]{10}\Z/,                               # Slovakia
     'SI' => /\ASI[0-9]{8}\Z/,                                # Slovenia
     'SE' => /\ASE[0-9]{12}\Z/,                               # Sweden
-    'CZ' => /\ACZ[0,9]{8,10}\Z/                              # Czech Republic
+    'CZ' => /\ACZ[0-9]{8,10}\Z/                              # Czech Republic
   }
 end
 
