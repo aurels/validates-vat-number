@@ -1,0 +1,1 @@
+require 'validates_vat_number'

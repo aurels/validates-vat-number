@@ -1,0 +1,35 @@
+= Description
+
+Use this plugin to validate VAT numbers for european countries.
+
+= Usage
+
+To validate a model field as a valid intracom VAT number :
+
+  validates_vat_number :vat_number
+
+It may be optional like this :
+
+  validates_vat_number :vat_number, :allow_blank => true
+
+If you want the VAT number's country to match another kind of country field, use
+the option :
+
+  validates_vat_number :vat_number, :country_method => :my_method
+
+where it is supposed that your model has a method nammed 'my_method' which
+returns the country code you want to match. The available country codes
+available for Europa are: DE, AT, BE, BG, CY, DK, ES, EE, FI, FR, EL, HU, IE,
+IT, LV, LT, LU, MT, NL, PL, PT, GB, RO, SK, SI, SE and CZ.
+
+= Installation
+
+As a gem in your environment.rb :
+
+  config.gem 'validates_vat_number'
+
+= Credits
+
+This plugin in released under MIT license by Aurélien Malisart
+
+(c) http://aurelien.malisart.be
