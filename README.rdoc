@@ -13,7 +13,7 @@ It may be optional like this :
   validates_vat_number :vat_number, :allow_blank => true
 
 If you want the VAT number's country to match another kind of country field, use
-the option :
+the option (not tested yet) :
 
   validates_vat_number :vat_number, :country_method => :my_method
 
@@ -27,6 +27,16 @@ IT, LV, LT, LU, MT, NL, PL, PT, GB, RO, SK, SI, SE and CZ.
 As a gem in your environment.rb :
 
   config.gem 'validates_vat_number'
+
+As an old-school Rails plugin :
+
+  script/plugin install git://github.com/aurels/validates_vat_number.git
+
+= Tests
+
+If you want to run the specs :
+
+  rake spec
 
 = Credits
 
