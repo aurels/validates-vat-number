@@ -40,6 +40,7 @@ If you want to run the specs :
 
 = Credits
 
-This plugin in released under MIT license by Aurélien Malisart
+This plugin in released under MIT license by Aurélien Malisart (see LICENSE
+file).
 
 (c) http://aurelien.malisart.be
