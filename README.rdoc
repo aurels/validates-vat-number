@@ -13,14 +13,31 @@ It may be optional like this :
   validates_vat_number :vat_number, :allow_blank => true
 
 If you want the VAT number's country to match another kind of country field, use
-the option (not tested yet) :
+the option :
 
   validates_vat_number :vat_number, :country_method => :my_method
 
-where it is supposed that your model has a method nammed 'my_method' which
+where it is supposed that your model has a method named 'my_method' which
 returns the country code you want to match. The available country codes
 available for Europa are: DE, AT, BE, BG, CY, DK, ES, EE, FI, FR, EL, HU, IE,
 IT, LV, LT, LU, MT, NL, PL, PT, GB, RO, SK, SI, SE and CZ.
+
+Example :
+
+  class Invoice < ActiveRecord::Base
+    validates_vat_number :vat_number, :country_method => :country_code
+    
+    # Logic to return the country code
+    def country_code
+      case country.downcase
+        when 'belgium' then 'BE'
+        when 'france'  then 'FR'
+        when 'sweden'  then 'SE'
+  	    # ...
+        else nil
+      end
+    end
+  end
 
 = Installation
 
