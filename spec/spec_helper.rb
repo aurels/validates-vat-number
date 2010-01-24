@@ -14,22 +14,4 @@ ActiveRecord::Base.establish_connection({
     :database => 'test.db'
 })
 
-ActiveRecord::Schema.define do
-  create_table :invoices, :force => true do |t|
-    t.string :vat_number
-  end
-  
-  create_table :optional_vat_invoices, :force => true do |t|
-    t.string :vat_number
-  end
-end
-
-# Utils models =================================================================
-
-class Invoice < ActiveRecord::Base  
-  validates_vat_number :vat_number
-end
-
-class OptionalVatInvoice < ActiveRecord::Base
-  validates_vat_number :vat_number, :allow_blank => true
-end
+require 'models'

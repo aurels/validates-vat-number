@@ -300,3 +300,46 @@ describe OptionalVatInvoice do
     OptionalVatInvoice.new(:vat_number => '').should be_valid
   end
 end
+
+describe CountryCheckedInvoice do
+  it "should be valid if vat number is correct and matches country" do
+    CountryCheckedInvoice.new(
+      :vat_number => 'BE0817331995',
+      :country    => 'Belgium'
+    ).should be_valid
+    
+    CountryCheckedInvoice.new(
+      :vat_number => 'FRBB123543267',
+      :country    => 'France'
+    ).should be_valid
+  end
+  
+  it "should not be valid if vat number is correct and does not match country" do    
+    CountryCheckedInvoice.new(
+      :vat_number => 'BE0817331995',
+      :country    => ''
+    ).should_not be_valid
+    
+    CountryCheckedInvoice.new(
+      :vat_number => 'BE0817331995',
+      :country    => 'France'
+    ).should_not be_valid
+    
+    CountryCheckedInvoice.new(
+      :vat_number => 'BE0817331995',
+      :country    => 'FunkyCountry'
+    ).should_not be_valid
+  end
+  
+  it "should be valid if vat number is blank" do
+    CountryCheckedInvoice.new(
+      :vat_number => '',
+      :country    => ''
+    ).should_not be_valid
+    
+    CountryCheckedInvoice.new(
+      :vat_number => '',
+      :country    => 'Belgium'
+    ).should_not be_valid
+  end
+end

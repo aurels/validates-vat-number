@@ -37,9 +37,9 @@ class ActiveRecord::Base
     
     validates_each(attr_names, configuration) do |record, attr_name, value|
       if configuration[:country_method]
-        country = self.send(options[:country_field]).to_s
-        if !ValidatesVatNumber::VAT_PATTERNS.has_key?(country) || value.to_s =~ ValidatesVatNumber::VAT_PATTERNS[country]
-          errors.add(field_sym, :invalid)
+        country = record.send(configuration[:country_method]).to_s
+        if !ValidatesVatNumber::VAT_PATTERNS.has_key?(country) || value.to_s !~ ValidatesVatNumber::VAT_PATTERNS[country]
+          record.errors.add(attr_name, :invalid)
         end
       else
         unless ValidatesVatNumber::VAT_PATTERNS.values.detect { |p| value.to_s =~ p }
