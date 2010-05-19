@@ -2,6 +2,9 @@
 
 Use this plugin to validate VAT numbers for european countries.
 
+This plugin is Rails 2.x-only, if you want the same functionnality for Rails 3,
+use my : vat_validator available at http://github.com/aurels/vat_validator
+
 = Usage
 
 To validate a model field as a valid intracom VAT number :
