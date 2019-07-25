@@ -1,11 +1,15 @@
-= Description
+# This project is really old and unmaintained. It's kept here for legacy reasons.
+
+We advice you to use this one instead : https://github.com/yolk/valvat
+
+## Description
 
 Use this plugin to validate VAT numbers for european countries.
 
 This plugin is Rails 2.x-only, if you want the same functionnality for Rails 3,
 use my : vat_validator available at http://github.com/aurels/vat_validator
 
-= Usage
+## Usage
 
 To validate a model field as a valid intracom VAT number :
 
@@ -29,7 +33,7 @@ Example :
 
   class Invoice < ActiveRecord::Base
     validates_vat_number :vat_number, :country_method => :country_code
-    
+
     # Logic to return the country code
     def country_code
       case country.downcase
@@ -42,7 +46,7 @@ Example :
     end
   end
 
-= Installation
+## Installation
 
 As a gem in your environment.rb :
 
@@ -52,13 +56,13 @@ As an old-school Rails plugin :
 
   script/plugin install git://github.com/aurels/validates_vat_number.git
 
-= Tests
+## Tests
 
 If you want to run the specs :
 
   rake spec
 
-= Credits
+## Credits
 
 This plugin in released under MIT license by Aurélien Malisart (see LICENSE
 file).
